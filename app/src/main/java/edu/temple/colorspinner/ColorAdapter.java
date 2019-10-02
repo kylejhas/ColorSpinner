@@ -1,9 +1,12 @@
 package edu.temple.colorspinner;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.text.Layout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 class ColorAdapter extends BaseAdapter {
     private Context context;
@@ -31,6 +34,16 @@ class ColorAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+
+        TextView textView = new TextView(context);
+
+        String colorVal = colors[i];
+
+        textView.setText(colorVal);
+
+        textView.setBackgroundColor(Color.parseColor(colorVal));
+
+
+        return textView;
     }
 }
